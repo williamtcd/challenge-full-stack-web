@@ -40,6 +40,6 @@ Neste projeto, a arquitetura foi projetada utilizando uma abordagem **cliente-se
 
 1. **Testes Automatizados**: Implementaria testes unitários e de integração utilizando **Jest** no backend (NestJS).
 
-2. **Documentação Completa**: Criaria uma documentação mais detalhada para os desenvolvedores do projeto, com instruções sobre como configurar o ambiente de desenvolvimento, executar testes, e detalhes sobre a arquitetura do sistema.
+2. **Documentação Completa**: Criaria uma documentação detalhada para o projeto.
 
 3. **Tratamento de Erros**: Aprimoraria o tratamento de erros tanto no frontend quanto no backend para fornecer respostas mais claras e facilitar o diagnóstico de problemas.
