@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS users (
   password VARCHAR(255) NOT NULL
 );
 INSERT INTO users (name, email, password) VALUES
-('admin', 'admin@maisa', 'passMaisA');
+('admin', 'admin@maisa.com.br', 'passMaisA');
 
 CREATE TABLE students (
     id INT AUTO_INCREMENT PRIMARY KEY,

@@ -17,7 +17,7 @@ import { StudentService } from './student.service';
 import { AuthGuard } from 'src/guards/auth.guard';
 
 @UseGuards(AuthGuard)
-@Controller('student')
+@Controller('students')
 export class StudentController {
   constructor(private readonly studentService: StudentService) {}
 

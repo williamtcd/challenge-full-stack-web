@@ -12,9 +12,9 @@ export class AuthController {
   }
 
   @UseGuards(AuthGuard)
-  @Post('me')
+  @Post('check')
   // eslint-disable-next-line @typescript-eslint/require-await
-  async me() {
-    return { me: 'ok' };
+  async check() {
+    return { status: true };
   }
 }
