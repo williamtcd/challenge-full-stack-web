@@ -11,6 +11,14 @@ CREATE TABLE IF NOT EXISTS users (
 INSERT INTO users (name, email, password) VALUES
 ('admin', 'admin@maisa', 'passMaisA');
 
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    ra VARCHAR(255) UNIQUE NOT NULL,
+    cpf VARCHAR(255) UNIQUE NOT NULL
+);
+
 CREATE USER 'apibd'@'%' IDENTIFIED BY 'passmaisa';
 GRANT ALL PRIVILEGES ON bd_maisa.* TO 'apibd'@'%';
 FLUSH PRIVILEGES;
