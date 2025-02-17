@@ -2,17 +2,18 @@ services:
   frontend:
     build: ./front
     ports:
-      - "5173:5173"  # Redireciona a porta 8080 para o Vite (5173)
+      - "5173:5173"
     depends_on:
       - backend
     volumes:
-      - front_volume:/app/node_modules
+      - ./front:/app  # Monta o código-fonte do frontend
+      - /app/node_modules
     restart: always
 
   backend:
     build: ./back
     ports:
-      - "3000:3000"  # Mantém a porta padrão do NestJS
+      - "3000:3000"
     depends_on:
       - mysql
     environment:
@@ -21,13 +22,14 @@ services:
       - MYSQL_PASSWORD=passmaisa
       - MYSQL_DATABASE=bd_maisa
     volumes:
-      - back_volume:/app/node_modules
+      - ./back:/app  # Monta o código-fonte do backend
+      - /app/node_modules  # Mantém node_modules dentro do container
     restart: always
 
   mysql:
     build: ./mysql
     ports:
-      - "3307:3307"
+      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=passmaisa
       - MYSQL_DATABASE=bd_maisa
@@ -36,6 +38,4 @@ services:
     restart: always
 
 volumes:
-  front_volume:
-  back_volume:
   mysql_data:
