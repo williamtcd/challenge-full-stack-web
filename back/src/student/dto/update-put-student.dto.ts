@@ -1,3 +1,14 @@
-import { CreateStudentDTO } from './create-student.dto';
+import { IsEmail, IsString, MinLength } from 'class-validator';
 
-export class UpdatePutStudentDTO extends CreateStudentDTO {}
+export class UpdatePutStudentDTO {
+  @IsString()
+  @MinLength(3)
+  name: string;
+
+  @IsEmail()
+  email: string;
+
+  @IsString()
+  @MinLength(11)
+  cpf: string;
+}

@@ -6,7 +6,7 @@ services:
     depends_on:
       - backend
     volumes:
-      - ./front:/app  # Monta o código-fonte do frontend
+      - ./front:/app
       - /app/node_modules
     restart: always
 
@@ -22,9 +22,11 @@ services:
       - MYSQL_PASSWORD=passmaisa
       - MYSQL_DATABASE=bd_maisa
     volumes:
-      - ./back:/app  # Monta o código-fonte do backend
-      - /app/node_modules  # Mantém node_modules dentro do container
+      - ./back:/app
+      - /app/node_modules
     restart: always
+    command: sh -c "npx prisma db pull && npx prisma generate && npm run dev"
+
 
   mysql:
     build: ./mysql
